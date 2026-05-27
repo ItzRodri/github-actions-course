@@ -20,7 +20,7 @@ jobs:
           php-version: "8.3"
       - name: php version
         run: php -v
-  others:
+  local-action:
     runs-on: ubuntu-latest
     steps:
       #actions para brindar permisos a github para acceder al repositorio
@@ -28,6 +28,8 @@ jobs:
         uses: actions/checkout@v6.0.2
       - name: ls
         uses: ./.github/actions/my-action
+        with:
+          message: "Rodrig, 27 May 2026"
 
     #  - name: ls
     #run: |
