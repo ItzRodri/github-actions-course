@@ -16,6 +16,7 @@ jobs:
         run: node -v
       - name: PHP
         uses: shivammathur/setup-php@v2
+        #establecer especificaciones de la version de php
         with:
           php-version: "8.3"
       - name: php version
@@ -28,6 +29,7 @@ jobs:
         uses: actions/checkout@v6.0.2
       - name: ls
         uses: ./.github/actions/my-action
+        #pasar parametro
         with:
           message: "Rodrig, 27 May 2026"
 

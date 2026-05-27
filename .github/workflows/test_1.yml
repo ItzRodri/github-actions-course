@@ -1,0 +1,15 @@
+name: Test 1
+on: [push]
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:latest
+        env:
+          MYSQL_ROOT_PASSWORD: example
+        ports:
+          - 3306:3306
+    steps:
+      - name: test
+        run: echo "Hello world"
