@@ -1,0 +1,39 @@
+name: Test
+on: [push]
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: ls
+        run: ls -al
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.4.0
+        with:
+          node-version: latest
+      - name: node version
+        run: node -v
+      - name: PHP
+        uses: shivammathur/setup-php@v2
+        #establecer especificaciones de la version de php
+        with:
+          php-version: "8.3"
+      - name: php version
+        run: php -v
+  local-action:
+    runs-on: ubuntu-latest
+    steps:
+      #actions para brindar permisos a github para acceder al repositorio
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: ls
+        uses: ./.github/actions/my-action
+        #pasar parametro
+        with:
+          message: "Rodrig, 27 May 2026"
+
+    #  - name: ls
+    #run: |
+    #  chmod +x scripts.sh
+    #  ./scripts.sh
