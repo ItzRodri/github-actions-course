@@ -1,0 +1,8 @@
+name: "My action"
+description: "My action description"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Hola Mundo
+      run: echo "Hello world"
