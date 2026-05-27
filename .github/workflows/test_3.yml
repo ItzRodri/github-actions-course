@@ -1,0 +1,12 @@
+name: Test 3
+on: [push]
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    env:
+      MY_VAR: MI variable de entorno
+    steps:
+      - name: test
+        env:
+          STEP_MY_VAR: MI variable de entorno a nivel step
+        run: echo "Valor $MY_VAR y $STEP_MY_VAR"
