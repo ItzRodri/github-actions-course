@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [hola]
     steps:
+      #actions para brindar permisos a github para acceder al repositorio
       - name: Checkout
         uses: actions/checkout@v6.0.2
       - name: ls
