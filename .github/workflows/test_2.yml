@@ -20,6 +20,15 @@ jobs:
           php-version: "8.3"
       - name: php version
         run: php -v
+  others:
+    runs-on: ubuntu-latest
+    steps:
+      #actions para brindar permisos a github para acceder al repositorio
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+      - name: ls
+        uses: ./.github/actions/my-action
+
     #  - name: ls
     #run: |
     #  chmod +x scripts.sh
